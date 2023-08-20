@@ -9,6 +9,7 @@ let saveStateKeys = ['vuex_token', 'profile'];
 const saveLifeData = function (key, value) {
 	// 判断变量名是否在需要存储的数组中
 	if (saveStateKeys.indexOf(key) != -1) {
+		console.log(key,'ooo')
 		// 获取本地存储的lifeData对象，将变量添加到对象中
 		let tmp = uni.getStorageSync('lifeData');
 		// 第一次打开APP，不存在lifeData变量，故放一个{}空对象

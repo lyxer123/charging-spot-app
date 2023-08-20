@@ -5,6 +5,7 @@ import store from '@/store';
 import * as filters from '@/common/filters.js';
 import mqttTool from '@/common/mqttTool.js';
 import bus from "@/common/bus.js"
+import payMixin from '@/common/payMixin.js'
 
 Vue.prototype.$mqttTool = mqttTool;
 Vue.prototype.$bus = bus;
@@ -21,6 +22,7 @@ Vue.use(uView);
 // 全局引入vuex
 let vuexStore = require("@/store/$u.mixin.js");
 Vue.mixin(vuexStore);
+Vue.mixin(payMixin);
 
 // 引入扩展方法
 import '@/common/extend.js';

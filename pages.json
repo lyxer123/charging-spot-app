@@ -36,13 +36,21 @@
 			}
 		},
 		{
+			"path": "pages/tabBar/charge/index",
+			"style": {
+				"navigationBarTitleText": "找站",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
 			"path": "pages/tabBar/scene/scene",
 			"style": {
 				"navigationBarTitleText": "场景",
 				"enablePullDownRefresh": true
 			}
 
-		}, {
+		}, 
+		{
 			"path": "pages/tabBar/trend/trend",
 			"style": {
 				"navigationBarTitleText": "动态",
@@ -52,7 +60,8 @@
 				}
 			}
 
-		}, {
+		}, 
+		{
 			"path": "pages/tabBar/user/user",
 			"style": {
 				"navigationBarTitleText": "我的",
@@ -69,8 +78,54 @@
 			"style": {
 				"navigationBarTitleText": "浏览网页"
 			}
+		},
+		{
+			"path": "pages/common/pay/index",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path" : "pages/common/order/index",
+			"style" :                                                                                    
+			{
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+			}
+				
 		}
-	],
+        ,{
+            "path" : "pages/common/order/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/common/device/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+				{
+					"path" : "pages/common/device/detail",
+					"style" :                                                                                    
+					{
+							"navigationBarTitleText": "",
+							"enablePullDownRefresh": false
+					}
+				    
+				}
+    ],
 	"subPackages": [{
 		"root": "pagesA",
 		"pages": [{
@@ -377,6 +432,12 @@
 				"iconPath": "static/home.png",
 				"selectedIconPath": "static/home_active.png",
 				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabBar/charge/index",
+				"iconPath": "static/charge.png",
+				"selectedIconPath": "static/charge_active.png",
+				"text": "找站"
 			},
 			{
 				"pagePath": "pages/tabBar/scene/scene",

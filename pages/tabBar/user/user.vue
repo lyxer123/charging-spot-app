@@ -54,6 +54,10 @@
 
 		<view class="group">
 			<u-cell-group>
+				<u-cell title="我的订单" @click="gotoOrder" isLink size="large">
+					<u-icon slot="icon" size="20" name="order" color="#2979ff"></u-icon>
+					<text slot="value" class="u-slot-value"></text>
+				</u-cell>
 				<u-cell title="账号" isLink @click="gotoAccount()" size="large">
 					<u-icon slot="icon" size="20" name="account" color="#2979ff"></u-icon>
 					<text slot="value" class="u-slot-value"></text>
@@ -164,6 +168,9 @@
 			}
 		},
 		methods: {
+			gotoOrder() {
+				uni.$u.route('pages/common/order/index')
+			},
 			// 退出系统
 			handleExit () {
 				this.show = true;

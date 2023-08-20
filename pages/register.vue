@@ -22,6 +22,16 @@
 						prefixIconStyle="font-size: 22px;color: #909399"
 					></u--input>
 				</u-form-item>
+				<u-form-item prop="carnumber" borderBottom>
+					<u--input
+						v-model="registerForm.carnumber"
+						clearable
+						border="none"
+						placeholder="请输入车牌号"
+						prefixIcon="car-fill"
+						prefixIconStyle="font-size: 22px;color: #909399"
+					></u--input>
+				</u-form-item>
 				<u-form-item prop="password" borderBottom>
 					<u--input
 						v-model="registerForm.password"
@@ -108,6 +118,13 @@ export default {
 						trigger: ['change', 'blur']
 					}
 				],
+				carnumber: {
+					type: 'string',
+					len: 7,
+					required: true,
+					message: '请输入车牌号码',
+					trigger: ['blur', 'change']
+				},
 				password: {
 					type: 'string',
 					required: true,

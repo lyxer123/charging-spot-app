@@ -143,11 +143,16 @@
 					this.$api.common.login(this.loginForm).then(async res => {
 						if (res.code == 200) {
 							// 存储token和账号
+							
 							this.saveToken(res.token);
 							this.saveAccount();
 							// 获取用户信息
 							let profile = await this.getProfile();
 							uni.$u.vuex('profile', profile);
+							uni.setStorage({
+								key: 'profile',
+								data: profile
+							})
 							// 跳转主页
 							uni.switchTab({
 								url: '/pages/tabBar/home/home'

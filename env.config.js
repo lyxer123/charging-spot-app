@@ -13,14 +13,19 @@ const CONFIG = {
 	// 开发环境配置
 	development: {
 		officialWebUrl: 'https://fastbee.cn/',
-		baseUrl: 'https://iot.wumei.live/prod-api/',
-		mqttServer: protocalDev + 'iot.fastbee.cn/mqtt',
+		baseUrl: 'https://api.lmnml.cn/api',
+		mqttServer: protocalDev + 'ws.emqx.lmnml.cn:8083/mqtt',
 	},
 	// 生产环境配置
 	production: {
 		officialWebUrl: 'https://fastbee.cn/',
-		baseUrl: 'https://iot.wumei.live/prod-api/',
-		mqttServer: protocalProd + 'iot.fastbee.cn/mqtt',
-	}
+		baseUrl: 'https://api.lmnml.cn/api',
+		mqttServer: protocalProd + 'ws.emqx.lmnml.cn:8083/mqtt',
+	},
+	// production: {
+	// 	officialWebUrl: 'https://fastbee.cn/',
+	// 	baseUrl: 'https://iot.wumei.live/prod-api/',
+	// 	mqttServer: protocalProd + 'iot.fastbee.cn/mqtt',
+	// }
 }
 export default CONFIG[process.env.NODE_ENV];
