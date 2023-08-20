@@ -1,0 +1,21 @@
+{
+	"name": "fastbee-app",
+	"version": "1.0.0",
+	"description": "手机端，可用于中小企业快速搭建物联网系统，个人学习搭建智能家居平台；适用于智能家居、智慧办公、智慧社区、农业监测、工业控制等",
+	"homepage": "https://fastbee.cn",
+	"main": "main.js",
+	"dependencies": {
+		"mqtt": "^3.0.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://code.wumei.live/ultimate/wumei-smart-app.git"
+	},
+	"keywords": ["fastbee"],
+	"author": "fastbee",
+	"license": "ISC"
+}

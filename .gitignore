@@ -1,0 +1,13 @@
+# Build Tools
+node_modules/*
+unpackage/*
+!unpackage/res
+
+# Development Tools
+.idea
+.vscode
+.hbuilderx/*
+
+package-lock.json
+yarn.lock
+.DS_Store

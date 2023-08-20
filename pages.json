@@ -1,0 +1,399 @@
+{
+	"easycom": {
+		// uview 组件
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue",
+		// 自定义组件
+		"^cl-(.*)": "@/components/cl-$1/index.vue"
+	},
+
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/register",
+			"style": {
+				"navigationBarTitleText": "用户注册",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/home/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/tabBar/scene/scene",
+			"style": {
+				"navigationBarTitleText": "场景",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/tabBar/trend/trend",
+			"style": {
+				"navigationBarTitleText": "动态",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/tabBar/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+
+				"app-plus": {
+					"bounce": "none", // 将回弹属性关掉
+					"popGesture": "close"
+				}
+			}
+		},
+		{
+			"path": "pages/common/webview/index",
+			"style": {
+				"navigationBarTitleText": "浏览网页"
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "pagesA",
+		"pages": [{
+				"path": "list/trend/trendDetail",
+				"meta": {
+					"title": "动态详情"
+				},
+				"style": {
+					"navigationBarTitleText": "动态详情",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/trend/categoryTrend",
+				"meta": {
+					"title": "分类动态"
+				},
+				"style": {
+					"navigationBarTitleText": "分类动态",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "list/scene/sceneEdit",
+				"meta": {
+					"title": "编辑场景"
+				},
+				"style": {
+					"navigationBarTitleText": "编辑场景",
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/home/deviceAdd",
+				"meta": {
+					"title": "添加设备"
+				},
+				"style": {
+					"navigationBarTitleText": "添加设备",
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/home/deviceRelate",
+				"meta": {
+					"title": "关联设备"
+				},
+				"style": {
+					"navigationBarTitleText": "关联设备",
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/home/deviceGroup/list",
+				"meta": {
+					"title": "设备分组"
+				},
+				"style": {
+					"navigationBarTitleText": "设备分组",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "list/home/deviceGroup/form",
+				"meta": {
+					"title": "编辑分组"
+				},
+				"style": {
+					"navigationBarTitleText": "编辑分组",
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/home/deviceGroup/deviceList",
+				"meta": {
+					"title": "设备列表"
+				},
+				"style": {
+					"navigationBarTitleText": "设备列表",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "list/home/deviceShare/list",
+				"meta": {
+					"title": "设备分享"
+				},
+				"style": {
+					"navigationBarTitleText": "设备分享",
+					"enablePullDownRefresh": true
+				}
+			},
+			{
+				"path": "list/home/deviceShare/form",
+				"meta": {
+					"title": "编辑分享用户"
+				},
+				"style": {
+					"navigationBarTitleText": "编辑分享用户",
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "home/device/index",
+				"meta": {
+					"title": "设备详情"
+				},
+				"style": {
+					"navigationBarTitleText": "设备详情",
+					"enablePullDownRefresh": false
+				}
+			}
+		]
+	}, {
+		"root": "pagesB",
+		"pages": [{
+				"path": "user/about",
+				"meta": {
+					"title": "关于"
+				},
+				"style": {
+					"navigationBarTitleText": "关于",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/user/message",
+				"meta": {
+					"title": "最新消息"
+				},
+				"style": {
+					"navigationBarTitleText": "最新消息",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/user/messageDetail",
+				"meta": {
+					"title": "消息详情"
+				},
+				"style": {
+					"navigationBarTitleText": "消息详情",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/user/setting",
+				"meta": {
+					"title": "系统设置"
+				},
+				"style": {
+					"navigationBarTitleText": "系统设置",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/user/emulator",
+				"meta": {
+					"title": "设备模拟"
+				},
+				"style": {
+					"navigationBarTitleText": "设备模拟",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "list/user/phone",
+				"meta": {
+					"title": "手机监控"
+				},
+				"style": {
+					"navigationBarTitleText": "手机监控",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "user/account",
+				"meta": {
+					"title": "账号信息"
+				},
+				"style": {
+					"navigationBarTitleText": "账号信息",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+			},
+			{
+				"path": "home/device/status/modbus/index",
+				"meta": {
+					"title": "运行状态"
+				},
+				"style": {
+					"navigationBarTitleText": "运行状态",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "home/device/status/modbus/edit",
+				"meta": {
+					"title": "设备修改"
+				},
+				"style": {
+					"navigationBarTitleText": "设备修改",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "home/device/log/event",
+				"meta": {
+					"title": "事件日志"
+				},
+				"style": {
+					"navigationBarTitleText": "事件日志",
+					"enablePullDownRefresh": true
+				}
+			},
+			{
+				"path": "home/device/log/order",
+				"meta": {
+					"title": "指令日志"
+				},
+				"style": {
+					"navigationBarTitleText": "指令日志",
+					"enablePullDownRefresh": true
+				}
+			},
+			{
+				"path": "home/device/timer/edit",
+				"meta": {
+					"title": "修改定时"
+				},
+				"style": {
+					"navigationBarTitleText": "修改定时",
+					"enablePullDownRefresh": false
+				}
+			}
+		]
+	}, {
+		"root": "pages_player", //分包所在路径
+		"pages": [ //页面数组
+			{
+				"path": "list/devicePlayer",
+				"style": {
+					"navigationBarTitleText": "播放器", //页面头部标题
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none" // 将回弹属性关掉
+					}
+				}
+
+			}
+		]
+	}],
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "蜂信物联",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"onReachBottomDistance": 50
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/home/home",
+				"iconPath": "static/home.png",
+				"selectedIconPath": "static/home_active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabBar/scene/scene",
+				"iconPath": "static/scene.png",
+				"selectedIconPath": "static/scene_active.png",
+				"text": "场景"
+			}, {
+				"pagePath": "pages/tabBar/trend/trend",
+				"iconPath": "static/trend.png",
+				"selectedIconPath": "static/trend_active.png",
+				"text": "动态"
+			}, {
+				"pagePath": "pages/tabBar/user/user",
+				"iconPath": "static/user.png",
+				"selectedIconPath": "static/user_active.png",
+				"text": "我的"
+			}
+		]
+	}
+}

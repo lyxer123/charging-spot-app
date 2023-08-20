@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>监控详情页</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+
+
+        .btn-box {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .more,
+        .less {
+            flex: 1
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .direc {
+            width: 150px;
+            height: 150px;
+            background: url('http://static.yfpyx.com/bigdata_app/image/monitor/1.png');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .direc div {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        .top {
+            top: 0;
+            left: 50px
+        }
+
+        .bottom {
+            bottom: 0;
+            left: 50px
+        }
+
+        .left {
+            left: 0;
+            top: 50px
+        }
+
+        .right {
+            right: 0;
+            top: 50px
+        }
+
+        #box {
+            height: 300px;
+            width: 100%;
+            background: #000;
+        }
+
+        #dialog {
+            display: none;
+            width: 200px;
+            line-height: 80px;
+            background: rgba(0, 0, 0, .8);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 4px;
+            z-index: 999;
+            top: 50%;
+            margin-top: -40px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="dialog">
+
+</div>
+<div class="btn-box">
+    <div class="more" ontouchstart="configCamera('move', 8)" ontouchend="stopConfigCamera()">
+        <image src="http://static.yfpyx.com/bigdata_app/image/monitor/3.png" mode="widthFix"></image>
+    </div>
+    <div class="direc">
+        <div class="top" ontouchstart="configCamera('move', 0)" ontouchend="stopConfigCamera()">
+
+        </div>
+        <div class="bottom" ontouchstart="configCamera('move', 1)" ontouchend="stopConfigCamera()">
+
+        </div>
+        <!-- <div class="photo" ontouchstart="configCamera('takephoto', '')">
+
+        </div> -->
+        <div class="left" ontouchstart="configCamera('move', 2)" ontouchend="stopConfigCamera()">
+
+        </div>
+        <div class="right" ontouchstart="configCamera('move', 6)" ontouchend="stopConfigCamera()">
+
+        </div>
+    </div>
+    <div class="less" ontouchstart="configCamera('move', 9)" ontouchend="stopConfigCamera()">
+        <image src="http://static.yfpyx.com/bigdata_app/image/monitor/2.png" mode="widthFix"></image>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 微信 JS-SDK 如果不需要兼容小程序，则无需引用此 JS 文件。 -->
+<!-- <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.4.0.js"></script> -->
+<!-- uni 的 SDK -->
+<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+<script type="text/javascript" src="http://static.yfpyx.com/bigdata_app/js/ezuikit.js"></script>
+<script type="text/javascript">
+    function configCamera(ctrl, movenum) {
+        if (ctrl == "takephoto") {
+            //拍照
+            $.ajax({
+                type: "POST",
+                url: "XXX",
+                data: {
+                    device_id: device_id,
+                }
+            }).then((res) => {
+                if (res.data.data) {
+                    var data = JSON.parse(res.data.data);
+                    var picUrl = data.data.picUrl;
+                } else {
+                    console.log(res.data.message)
+                }
+            });
+        } else {
+            //上下左右、放大、缩小
+            $.ajax({
+                type: "POST",
+                url: "XXX",
+                data: {
+                    device_id: device_id,
+                    ctrl: ctrl,
+                    movenum: movenum,
+                }
+            }).then((res) => {
+                $('#dialog').html('指令下发成功,请等待...').stop().show(500).delay(3000).hide(500)
+
+            })
+        }
+    }
+
+    function stopConfigCamera() {
+        $.ajax({
+            type: "POST",
+            url: "XXX",
+            data: {
+                device_id: device_id,
+                ctrl: "stop",
+            },
+        });
+    }
+    var str = window.location.search.substr(1)
+    var arr = str.split('&')
+    var device_id = arr[0].split('=')[1]
+    var accessToken = arr[1].split('=')[1]
+    $.ajax({
+        type: "POST",
+        url: "xxx",
+        data: {
+            device_id: device_id,
+        }
+    }).then((res) => {
+        var data = eval("(" + res.data + ")");
+        var hlsHdSrc = data.hlsHd;
+        var playHtml =
+            `<video id="myPlayer" autoplay   poster='' controls playsInline  webkit-playsinline src=${hlsHdSrc}  style="width:100%; height:100%;"></video>`;
+        $("#box").html(playHtml)
+        var myVideo = new EZUIKit.EZUIPlayer("myPlayer");
+        setTimeout(() => {
+            myVideo.play();
+        }, 150);
+
+    })
+</script>
+</html>

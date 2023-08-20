@@ -1,0 +1,29 @@
+{
+	"description": "项目配置文件，用于直接导入微信开发者工具",
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": true,
+		"newFeature": true,
+		"bigPackageSizeSupport": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.32.1",
+	"appid": "wx5bfbadf52adc17f3",
+	"projectname": "蜂信物联",
+	"condition": {},
+	"editorSetting": {
+		"tabIndent": "insertSpaces",
+		"tabSize": 2
+	}
+}
