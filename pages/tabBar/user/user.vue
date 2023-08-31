@@ -7,12 +7,12 @@
 						width="50" height="50"></u--image></view>
 				<view>
 					<u--text :text="profile.nickName" color="#ffffff" bold></u--text>
-					<u--text text="蜂信物联-开源物联网平台" color="#ffffff" size="12"></u--text>
+					<!-- <u--text text="蜂信物联-开源物联网平台" color="#ffffff" size="12"></u--text> -->
 				</view>
 			</view>
 		</u-sticky>
 
-		<view style="background-color:#ffffff;padding:20px">
+		<!-- <view style="background-color:#ffffff;padding:20px">
 			<u-grid :border="false" col="4">
 				<u-grid-item>
 					<u-icon name="/static/device_white.png" size="25" color="#fff" label="添加设备" labelPos="bottom"
@@ -36,10 +36,10 @@
 						customStyle="background-color:#5ac725;border-radius:3px;padding:10px;"></u-icon>
 				</u-grid-item>
 			</u-grid>
-		</view>
+		</view> -->
 
 		<!-- 会员升级 -->
-		<view class="vip-wrap">
+		<!-- <view class="vip-wrap">
 			<view class="vip">
 				<view class="left">
 					<u--text text="普通会员" size="18"></u--text>
@@ -50,7 +50,7 @@
 				</view>
 			</view>
 			<vip-model :show="isVipModel" @close="isVipModel = false"></vip-model>
-		</view>
+		</view> -->
 
 		<view class="group">
 			<u-cell-group>
@@ -70,16 +70,16 @@
 					<u-icon slot="icon" size="20" name="setting" color="#0b969d"></u-icon>
 					<text slot="value" class="u-slot-value"></text>
 				</u-cell> -->
-				<u-cell title="关于" isLink url="/pagesB/user/about" size="large">
+				<!-- <u-cell title="关于" isLink url="/pagesB/user/about" size="large">
 					<u-icon slot="icon" size="20" name="info-circle" color="#d3077b"></u-icon>
 					<text slot="value" class="u-slot-value"></text>
-				</u-cell>
-				<u-cell isLink size="large">
+				</u-cell> -->
+				<!-- <u-cell isLink size="large">
 					<u-link slot="title" href="https://gitee.com/kerwincui/wumei-smart/tree/master/app" text="APP下载"
 						color="#333"></u-link>
 					<u-icon slot="icon" size="20" name="download" color="#f56c6c"></u-icon>
 					<text slot="value" class="u-slot-value"></text>
-				</u-cell>
+				</u-cell> -->
 				<!-- <u-cell title="手机监控" isLink url="/pagesB/tabBar/user/phone" size="large">
 					<u-icon slot="icon" size="20" name="star-fill" color="#14cfa9"></u-icon>
 					<text slot="value" class="u-slot-value"></text>

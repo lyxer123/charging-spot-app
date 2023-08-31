@@ -27,7 +27,7 @@
 				<view class="charge-product">
 					<u--text :text="`所属产品：${detail.productName}`" lines="1" :size="12" color="#ccc"></u--text>
 				</view>
-				<u--text :text="`其他：${detail.remark}`" lines="2" :size="12" color="#ccc"></u--text>
+				<u--text :text="`其他：${detail.remark || '--'}`" lines="2" :size="12" color="#ccc"></u--text>
 				<!-- <u--text prefixIcon="clock" iconStyle="font-size: 12px" :size="12" text="营业时间: 00:00-24:00" type="info" ></u--text> -->
 			</view>
 		</view>
@@ -42,7 +42,9 @@
 		</view>
 		<view class="bar-bottom">
 			<view class="scan-btn">
-				<u-button type="primary" text="扫码充电" @click="handleScan"></u-button>
+				<!-- <u-button type="primary" text="扫码充电" @click="handleScan"></u-button> -->
+				<u-button v-if="isNotUse" type="primary" text="扫码充电" @click="handleScan"></u-button>
+				<u-button v-else disabled text="设备使用中"></u-button>
 				<!-- <u-button v-else type="primary" @click.native.stop="handleStopCharge(item)">充电中...</u-button> -->
 			</view>
 		</view>
@@ -58,6 +60,7 @@
 	export default {
 		data() {
 			return {
+				isNotUse: true,
 				show: false,
 				result: null,
 				currentTime: '',
@@ -72,6 +75,7 @@
 		},
 		onLoad(option) {
 			this.deviceId = option?.deviceId|| '';
+			this.isNotUse = option?.isNotUse == 'false' ? false : true;
 			this.fetchDetail()
 		},
 		filters: {

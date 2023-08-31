@@ -28,13 +28,13 @@
 				}
 			}
 		},
-		{
-			"path": "pages/tabBar/home/home",
-			"style": {
-				"navigationBarTitleText": "首页",
-				"enablePullDownRefresh": true
-			}
-		},
+		// {
+		// 	"path": "pages/tabBar/home/home",
+		// 	"style": {
+		// 		"navigationBarTitleText": "首页",
+		// 		"enablePullDownRefresh": true
+		// 	}
+		// },
 		{
 			"path": "pages/tabBar/charge/index",
 			"style": {
@@ -427,29 +427,32 @@
 		"selectedColor": "#007AFF",
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
-		"list": [{
-				"pagePath": "pages/tabBar/home/home",
-				"iconPath": "static/home.png",
-				"selectedIconPath": "static/home_active.png",
-				"text": "首页"
-			},
+		"list": [
+			// {
+			// 	"pagePath": "pages/tabBar/home/home",
+			// 	"iconPath": "static/home.png",
+			// 	"selectedIconPath": "static/home_active.png",
+			// 	"text": "首页"
+			// },
 			{
 				"pagePath": "pages/tabBar/charge/index",
 				"iconPath": "static/charge.png",
 				"selectedIconPath": "static/charge_active.png",
 				"text": "找站"
 			},
+			// {
+			// 	"pagePath": "pages/tabBar/scene/scene",
+			// 	"iconPath": "static/scene.png",
+			// 	"selectedIconPath": "static/scene_active.png",
+			// 	"text": "场景"
+			// },
+			// {
+			// 	"pagePath": "pages/tabBar/trend/trend",
+			// 	"iconPath": "static/trend.png",
+			// 	"selectedIconPath": "static/trend_active.png",
+			// 	"text": "动态"
+			// }, 
 			{
-				"pagePath": "pages/tabBar/scene/scene",
-				"iconPath": "static/scene.png",
-				"selectedIconPath": "static/scene_active.png",
-				"text": "场景"
-			}, {
-				"pagePath": "pages/tabBar/trend/trend",
-				"iconPath": "static/trend.png",
-				"selectedIconPath": "static/trend_active.png",
-				"text": "动态"
-			}, {
 				"pagePath": "pages/tabBar/user/user",
 				"iconPath": "static/user.png",
 				"selectedIconPath": "static/user_active.png",

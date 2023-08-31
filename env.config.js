@@ -10,22 +10,22 @@ protocalProd = 'wxs://';
 
 
 const CONFIG = {
-	// 开发环境配置
 	development: {
 		officialWebUrl: 'https://fastbee.cn/',
-		baseUrl: 'https://api.lmnml.cn/api',
-		mqttServer: protocalDev + 'ws.emqx.lmnml.cn:8083/mqtt',
+		baseUrl: 'https://pay.bldxny.com/prod-api',
+		mqttServer: protocalProd + '47.108.226.28:8083/mqtt',
 	},
+	// 开发环境配置
+	// development: {
+	// 	officialWebUrl: 'https://fastbee.cn/',
+	// 	baseUrl: 'https://api.lmnml.cn/api',
+	// 	mqttServer: protocalDev + 'ws.emqx.lmnml.cn:8083/mqtt',
+	// },
 	// 生产环境配置
 	production: {
 		officialWebUrl: 'https://fastbee.cn/',
-		baseUrl: 'https://api.lmnml.cn/api',
-		mqttServer: protocalProd + 'ws.emqx.lmnml.cn:8083/mqtt',
+		baseUrl: 'https://pay.bldxny.com/prod-api',
+		mqttServer: protocalProd + '47.108.226.28:8083/mqtt',
 	},
-	// production: {
-	// 	officialWebUrl: 'https://fastbee.cn/',
-	// 	baseUrl: 'https://iot.wumei.live/prod-api/',
-	// 	mqttServer: protocalProd + 'iot.fastbee.cn/mqtt',
-	// }
 }
 export default CONFIG[process.env.NODE_ENV];

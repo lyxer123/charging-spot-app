@@ -6,7 +6,7 @@
 		<view class="charge__container">
 			<u-empty mode="data" v-if="list.length == 0"></u-empty>
 			<template v-else>
-				<view class="charge__card" @click.native.stop="handleGoDetail(item.deviceId)" v-for="item in list" :key="item.deviceId">
+				<view class="charge__card" @click.native.stop="handleGoDetail(item)" v-for="item in list" :key="item.deviceId">
 					<u--text :text="item.deviceName" lines="1" :bold="true" :size="16"></u--text>
 					<!-- <view class="charge-no">
 						<u--text :text="`编号：${item.serialNumber}`" lines="1" :size="12" color="#ccc"></u--text>
@@ -18,7 +18,7 @@
 					<view class="info__wrapper">
 						<view class="btn__wrapper">
 							<u-button v-if="item.showButton" type="primary" size="mini" @click.native.stop="handleScanCode(item.productId)">扫码充电</u-button>
-							<u-button v-else type="primary" size="mini">其他用户使用中</u-button>
+							<u-button v-else  disabled size="mini" @click.native.stop="handleBtn">其他用户使用中</u-button>
 						</view>
 					</view>
 				</view>
@@ -61,6 +61,12 @@ export default {
 		this.loadMore()
 	},
 	methods: {
+		handleBtn() {
+			uni.showToast({
+				icon: 'none',
+				title: '使用中，选择其他设备'
+			})
+		},
 		loadMore() {
 			if (this.list.length >= this.total) return;
 			this.status = 'loading';
@@ -86,11 +92,12 @@ export default {
 					uni.hideLoading()
 				})
 		},
-		handleGoDetail(id = '') {
+		handleGoDetail(row) {
 			uni.$u.route({
 				url: '/pages/common/device/detail',
 				params: {
-					deviceId: id
+					deviceId: row.deviceId,
+					isNotUse: row.showButton
 				}
 			})
 		},
@@ -124,25 +131,27 @@ export default {
 			})
 		},
 		fetchStartCharge(params) {
-			uni.showLoading({
-				title: '启动中...'
-			})
+			// uni.showLoading({
+			// 	title: '启动中...'
+			// })
 			startCharge(params)
 				.then(res=> {
 					if (res.code == 200) {
 						// 成功
 						uni.showToast({
-							title: res.msg || ''
+							title: res.msg || '',
+							icon: 'none',
+							duration: 4000
 						})
 					} else {
 						uni.showToast({
 							title: res.msg || '',
 							icon: 'none',
-							duration: 3000
+							duration: 4000
 						})
 					}
 				}).finally(()=> {
-					uni.hideLoading();
+					// uni.hideLoading();
 				})
 		},
 		handleStopCharge(option) {

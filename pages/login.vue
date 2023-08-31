@@ -110,7 +110,7 @@
 			if (this.token != '' && this.token != null) {
 				// 跳转主页
 				uni.switchTab({
-					url: '/pages/tabBar/home/home'
+					url: '/pages/tabBar/charge/index'
 				});
 			} else {
 				this.getCode();
@@ -155,7 +155,7 @@
 							})
 							// 跳转主页
 							uni.switchTab({
-								url: '/pages/tabBar/home/home'
+								url: '/pages/tabBar/charge/index'
 							});
 						} else {
 							this.getCode();
